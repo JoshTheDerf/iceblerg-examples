@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Posts tagged "<%- iceblerg.page.tag %>"</title>
+    </head>
+    <body>
+        <p>
+            <a href="<%- iceblerg.getOverviewURL() %>">Overview</a>
+            <span> / </span>
+            <a href="<%- iceblerg.getTagURL(iceblerg.page.tag) %>">tag:<%- iceblerg.page.tag %></a>
+        </p>
+        <h1>Posts tagged "<%- iceblerg.page.tag %>"</h1>
+        <% for(var i = 0; i < iceblerg.getPostsByTag(iceblerg.page.tag).length; i++) {
+            var post = iceblerg.getPostsByTag(iceblerg.page.tag)[i];
+        %>
+            <h2><a href="<%- iceblerg.getPostURL(post) %>"><%- post.title %></a></h2>
+            <p><%= iceblerg.contentRenderer(post.preview) %></p>
+            <br/>
+        <% }; %>
+    </body>
+</html>

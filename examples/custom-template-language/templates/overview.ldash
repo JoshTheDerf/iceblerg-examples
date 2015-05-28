@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Blog Overview</title>
+    </head>
+    <body>
+        <h1>Blog Overview</h1>
+        <h2>All Posts</h2>
+        <%
+            var allPosts = iceblerg.getAllPosts();
+            for(var i = 0; i < allPosts.length; i++) {
+                var post = allPosts[i];
+        %>
+            <h3><a href="<%- iceblerg.getPostURL(post) %>"><%- post.title %></a></h3>
+            <p><%= iceblerg.contentRenderer(post.preview) %></p>
+            <br/>
+        <% }; %>
+        <h2>All Tags</h2>
+        <%
+            var allTags = iceblerg.getAllTags();
+            for(var i = 0; i < allTags.length; i++) {
+                var tag = allTags[i];
+        %>
+            <strong><a href="<%- iceblerg.getTagURL(tag) %>"><%- tag %></a> | </strong>
+        <% }; %>
+
+        <h2>All Authors</h2>
+        <%
+            var allAuthors = iceblerg.getAllAuthors();
+            for(var i = 0; i < allAuthors.length; i++) {
+                var author = allAuthors[i];
+        %>
+            <strong><a href="<%- iceblerg.getAuthorURL(author) %>"><%- author %></a> | </strong>
+        <% }; %>
+    </body>
+</html>

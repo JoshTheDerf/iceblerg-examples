@@ -1,0 +1,15 @@
+doctype html
+html
+    head
+        title Posts tagged "#{iceblerg.page.tag}"
+    body
+        p 
+            a(href="#{iceblerg.getOverviewURL()}") Overview
+            |  / 
+            a(href="#{iceblerg.getTagURL(iceblerg.page.tag)}") tag:#{iceblerg.page.tag}
+        h1 Posts tagged "#{iceblerg.page.tag}"
+        each post in iceblerg.getPostsByTag(iceblerg.page.tag)
+            h2
+                a(href="#{iceblerg.getPostURL(post)}")= post.title
+            p!= iceblerg.contentRenderer(post.preview)
+            br

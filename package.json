@@ -1,0 +1,35 @@
+{
+  "name": "iceblerg-examples",
+  "version": "1.0.0",
+  "description": "Examples for iceblerg: a no-frills static blog generator.",
+  "directories": {
+    "example": "examples"
+  },
+  "dependencies": {
+    "iceblerg": "^1.0.0",
+    "lodash.template": "^3.6.1",
+    "textile-js": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tribex/iceblerg-examples.git"
+  },
+  "keywords": [
+    "iceblerg",
+    "static",
+    "blog",
+    "blogging",
+    "generator",
+    "framework",
+    "example",
+    "tutorial"
+  ],
+  "author": "Joshua Bemenderfer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Tribex/iceblerg-examples/issues"
+  },
+  "homepage": "https://github.com/Tribex/iceblerg-examples#readme"
+}

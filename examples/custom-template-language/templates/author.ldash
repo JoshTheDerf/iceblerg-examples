@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Posts by <%- iceblerg.page.author %></title>
+    </head>
+    <body>
+        <p>
+            <a href="<%- iceblerg.getOverviewURL() %>">Overview</a>
+            <span> / </span>
+            <a href="<%- iceblerg.getAuthorURL(iceblerg.page.author) %>">author:<%- iceblerg.page.author %></a>
+        </p>
+        <h1>Posts by <%- iceblerg.page.author %></h1>
+        <% for(var i = 0; i < iceblerg.getPostsByAuthor(iceblerg.page.author).length; i++) {
+            var post = iceblerg.getPostsByAuthor(iceblerg.page.author)[i];
+        %>
+            <h2><a href="<%- iceblerg.getPostURL(post) %>"><%- post.title %></a></h2>
+            <p><%= iceblerg.contentRenderer(post.preview) %></p>
+            <br/>
+        <% }; %>
+    </body>
+</html>

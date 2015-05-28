@@ -1,0 +1,15 @@
+doctype html
+html
+    head
+        title Posts by #{iceblerg.page.author}
+    body
+        p 
+            a(href="#{iceblerg.getOverviewURL()}") Overview
+            |  / 
+            a(href="#{iceblerg.getAuthorURL(iceblerg.page.author)}") author:#{iceblerg.page.author}
+        h1 Posts by #{iceblerg.page.author}
+        each post in iceblerg.getPostsByAuthor(iceblerg.page.author)
+            h2
+                a(href="#{iceblerg.getPostURL(post)}")= post.title
+            p!= iceblerg.contentRenderer(post.preview)
+            br

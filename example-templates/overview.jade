@@ -1,0 +1,23 @@
+doctype html
+html
+    head
+        title Blog Overview
+    body
+        h1 Blog Overview
+        h2 All Posts
+        each post in iceblerg.getAllPosts()
+            h3
+                a(href="#{iceblerg.getPostURL(post)}")= post.title
+            p!= iceblerg.contentRenderer(post.preview)
+            br
+        h2 All Tags
+        each tag in iceblerg.getAllTags()
+            strong
+                a(href="#{iceblerg.getTagURL(tag)}")= tag
+                | &nbsp;
+        h2 All Authors
+        each author in iceblerg.getAllAuthors()
+            strong
+                a(href="#{iceblerg.getAuthorURL(author)}")= author
+                | &nbsp;
+                
